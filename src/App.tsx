@@ -1,20 +1,10 @@
-import dayjs from "dayjs"
-import { useEffect, useState } from "react"
+import { LiveClock } from "./components/LiveClock"
 export const App = () => {
-
-  const [time, setTime] = useState(dayjs().format('hh:mm:ss'))
-  useEffect(() => {
-    const timeInterval = setInterval(() => {
-      setTime(dayjs().format('hh:mm:ss'))
-    }, 1000)
-    return () => clearInterval(timeInterval)
-  }, [])
-
 
   return (
     <>
       <div className="">
-        {time}  </div>   </>
+        <LiveClock></LiveClock>      </div>   </>
   )
 }
 
