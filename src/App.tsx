@@ -1,10 +1,20 @@
 import dayjs from "dayjs"
+import { useEffect, useState } from "react"
 export const App = () => {
+
+  const [time, setTime] = useState(dayjs().format('hh:mm:ss'))
+  useEffect(() => {
+    const timeInterval = setInterval(() => {
+      setTime(dayjs().format('hh:mm:ss'))
+    }, 1000)
+    return () => clearInterval(timeInterval)
+  }, [])
+
 
   return (
     <>
-      <div className="bg-slate-500">
-        {dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:mm:ss')}      </div>   </>
+      <div className="">
+        {time}  </div>   </>
   )
 }
 
