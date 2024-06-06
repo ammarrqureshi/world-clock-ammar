@@ -11,7 +11,7 @@ export const LiveClock = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center w-full h-screen ">
+    <div className=" ">
       <h1 className="text-9xl">{time}</h1>
     </div>
   );
