@@ -1,10 +1,10 @@
-import { LiveClock } from "./components/LiveClock"
+import { LiveClock } from "./components/LiveClock";
 export const App = () => {
-
   return (
     <>
       <div className="">
-        <LiveClock></LiveClock>      </div>   </>
-  )
-}
-
+        <LiveClock></LiveClock>
+      </div>
+    </>
+  );
+};
