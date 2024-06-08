@@ -9,5 +9,26 @@ export const TimeZone = (time: string) => {
   dayjs.extend(timezone);
   dayjs.tz.setDefault(selectedRegion);
 
-  return <div>{selectedRegion}</div>;
+  const supportedTimezones = Intl.supportedValuesOf("timeZone");
+
+
+
+
+
+  return (
+    <div>
+      {selectedRegion}
+      <div>
+        <form action="">
+        <select id="timezones" name="timezones">
+        {supportedTimezones.map((timezone:string, index:any) => (
+          <option key={index} value={timezone}>
+            {timezone}
+          </option>
+        ))}
+      </select>
+        </form>
+      </div>
+    </div>
+  );
 };
