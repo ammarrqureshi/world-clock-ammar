@@ -9,7 +9,9 @@ export const TimeZone = () => {
   dayjs.extend(timezone);
   dayjs.tz.setDefault(selectedRegion);
 
+
   const supportedTimezones = Intl.supportedValuesOf("timeZone");
+  
 
   const getSelectedTimezone = (event: ChangeEvent<HTMLSelectElement>) => {
     event.preventDefault();
