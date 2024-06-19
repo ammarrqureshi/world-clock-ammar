@@ -4,9 +4,10 @@ import timezone from "dayjs/plugin/timezone";
 
 import { useEffect, useState } from "react";
 export const LiveClock = () => {
-  const [time, setTime] = useState(dayjs.tz().format("HH:mm:ss"));
   dayjs.extend(utc);
   dayjs.extend(timezone);
+  const [time, setTime] = useState(dayjs.tz().format("HH:mm:ss"));
+
 
   useEffect(() => {
     const timeInterval = setInterval(() => {

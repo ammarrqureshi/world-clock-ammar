@@ -2,6 +2,7 @@ import { Button } from "./components/ui/Button";
 import { LiveClock } from "./components/LiveClock";
 import { Date } from "./components/Date";
 import { TimeZone } from "./components/TimeZone";
+import { Select } from "./components/ui/Select";
 export const App = () => {
   return (
     <>
@@ -10,6 +11,7 @@ export const App = () => {
           <TimeZone />
           <Button />
 
+          <Select></Select>
           <LiveClock></LiveClock>
           <Date />
         </div>

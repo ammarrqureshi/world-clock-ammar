@@ -1,5 +1,12 @@
 import * as dayjs from "dayjs";
-const current_date = dayjs().format("dddd, DD MMMM, YYYY");
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+import { useEffect, useState } from "react";
+
 export const Date = () => {
-  return <div>{current_date}</div>;
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+  const [date, setDate] = useState(dayjs.tz().format("dddd, DD MMMM, YYYY"));
+
+  return <div>{date}</div>;
 };
