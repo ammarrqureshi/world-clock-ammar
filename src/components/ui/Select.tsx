@@ -1,11 +1,11 @@
-import React from "react";
-
 export const Select = () => {
   return (
     <div>
-      <select>
-        <option></option>
-      </select>
+      <div>Choose One</div>
+      <div>
+        <div>Karachi</div>
+        <div>Quetta</div>
+      </div>
     </div>
   );
 };
