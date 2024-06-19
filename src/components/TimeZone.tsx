@@ -3,16 +3,16 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { ChangeEvent, useState } from "react";
 
-
 export const TimeZone = () => {
-  const [selectedRegion, setSelectedRegion] = useState(dayjs.tz.guess());
   dayjs.extend(utc);
   dayjs.extend(timezone);
+  const [selectedRegion, setSelectedRegion] = useState<string>(
+    dayjs.tz.guess()
+  );
+
   dayjs.tz.setDefault(selectedRegion);
 
-
-  const supportedTimezones = Intl.supportedValuesOf("timeZone") ;
-  
+  const supportedTimezones = Intl.supportedValuesOf("timeZone");
 
   const getSelectedTimezone = (event: ChangeEvent<HTMLSelectElement>) => {
     event.preventDefault();
