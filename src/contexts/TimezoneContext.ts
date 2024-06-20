@@ -10,8 +10,6 @@ export const TimezoneProvider = ({children}: {children: ReactNode}) => {
   const [timezone, setTimezone] = useState<string>(dayjs.tz.guess());
 
 return (
-<TimezoneContext.Provider value= {{timezone, setTimezone}}>
-{children}
-</TimezoneContext.Provider>
+  "hello world"
 )
 };
