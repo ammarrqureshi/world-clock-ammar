@@ -25,7 +25,8 @@ export const TimeZone = () => {
       <div>
         <form action="">
           <select
-            onChange={getSelectedTimezone}
+    className="br-sketch border-4  border-black px-6 py-4  bg-transparent"
+    onChange={getSelectedTimezone}
             id="timezones"
             name="timezones"
           >
