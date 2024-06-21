@@ -31,6 +31,7 @@ export const EditForm = ({ setIsVisible }: { setIsVisible: () => void }) => {
         Change your timezone
         <form
           action=""
+          method="post"
           onSubmit={formSubmitHandler}
           className="flex gap-8 justify-between"
         >

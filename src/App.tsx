@@ -11,7 +11,16 @@ export const App = () => {
     <>
       <div className="flex justify-center h-screen w-full items-center">
         <div className="flex flex-col  justify-center items-center br-sketch border-4 border-gray-900 p-8 rounded-xl">
-          <TimeZone />
+          <div className="flex gap-6 items-center">
+            <TimeZone />
+
+            <EditButton
+              onClick={() => {
+                setIsVisible(true);
+              }}
+            />
+          </div>
+
           {isVisible && (
             <EditForm
               setIsVisible={() => {
@@ -20,12 +29,6 @@ export const App = () => {
             />
           )}
 
-          <EditButton />
-          <button
-            onClick={() => {
-              setIsVisible(true);
-            }}
-          >CLICK HERE</button>
           <LiveClock></LiveClock>
           <Date />
         </div>

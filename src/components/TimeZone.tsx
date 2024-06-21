@@ -7,5 +7,5 @@ import {
 export const TimeZone = () => {
   const { timezone } = useContext(TimezoneContext) as TimezoneContextProps;
 
-  return <div>{timezone}</div>;
+  return <div className="text-lg text-black/60">{timezone}</div>;
 };
