@@ -1,11 +1,10 @@
-import arrowDown from "../assets/arrow-down.png";
 import dayjs from "dayjs";
 import { ChangeEvent, FormEvent, useContext, useState } from "react";
+import arrowDown from "../assets/arrow-down.png";
 import {
   TimezoneContext,
   TimezoneContextProps,
 } from "../contexts/TimezoneContext";
-import { url } from "inspector";
 
 export const EditForm = ({ setIsVisible }: { setIsVisible: () => void }) => {
   const { timezone, setTimezone } = useContext(
@@ -60,7 +59,12 @@ export const EditForm = ({ setIsVisible }: { setIsVisible: () => void }) => {
               </option>
             ))}
           </select>
-          <button type="submit">Change</button>
+          <button
+            className="p-2 box-content hover:bg-black/15 rounded-2xl br-sketch hover:border-2 border-black "
+            type="submit"
+          >
+            Change
+          </button>
         </form>
       </div>
     </div>
