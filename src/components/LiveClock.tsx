@@ -17,8 +17,8 @@ export const LiveClock = () => {
   }, []);
 
   return (
-    <div className=" ">
-      <h1 className="text-9xl">{time}</h1>
+    <div className="bg-red-500">
+      <h1 className="text-2xl">{time}</h1>
     </div>
   );
 };
