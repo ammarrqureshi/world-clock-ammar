@@ -5,7 +5,7 @@ import {
   TimezoneContextProps,
 } from "../contexts/TimezoneContext";
 
-export const EditForm = () => {
+export const EditForm = ({ setIsVisible }: { setIsVisible: () => void }) => {
   const { timezone, setTimezone } = useContext(
     TimezoneContext
   ) as TimezoneContextProps;
@@ -21,13 +21,14 @@ export const EditForm = () => {
   const formSubmitHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setTimezone(selected);
+    setIsVisible();
   };
 
   return (
     <div className="fixed w-screen h-screen">
-      <div id="form-backdrop" className=" bg-white/90 w-full h-full"></div>
+      <div id="form-backdrop" onClick={()=> setIsVisible()} className=" bg-white/90 w-full h-full"></div>
       <div className=" px-24 py-14  z-30 border-4 border-black br-sketch bg-white flex flex-col gap-6 justify-center items-left absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
-       Change your timezone
+        Change your timezone
         <form
           action=""
           onSubmit={formSubmitHandler}
@@ -46,7 +47,9 @@ export const EditForm = () => {
               </option>
             ))}
           </select>
-          <button type="submit">Change</button>
+          <button type="submit">
+            Change
+          </button>
         </form>
       </div>
     </div>
