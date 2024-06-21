@@ -2,6 +2,7 @@ import { EditButton } from "./components/ui/EditButton";
 import { LiveClock } from "./components/LiveClock";
 import { Date } from "./components/Date";
 import { TimeZone } from "./components/TimeZone";
+import { TimezoneProvider } from "./contexts/TimezoneContext";
 export const App = () => {
   return (
     <>
@@ -9,8 +10,9 @@ export const App = () => {
         <div className="flex flex-col  justify-center items-center br-sketch border-4 border-gray-900 p-8 rounded-xl">
           {/* <TimeZone /> */}
           <EditButton />
-
-          <LiveClock></LiveClock>
+          <TimezoneProvider>
+            <LiveClock></LiveClock>
+          </TimezoneProvider>
           <Date />
         </div>
       </div>
