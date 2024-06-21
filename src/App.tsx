@@ -9,9 +9,9 @@ export const App = () => {
 
   return (
     <>
-      <div className="flex justify-center h-screen w-full items-center">
-        <div className="flex flex-col  justify-center items-center br-sketch border-4 border-gray-900 p-8 rounded-xl">
-          <div className="flex gap-6 items-center">
+      <div className="flex justify-center h-screen w-full items-center ">
+        <div className="flex flex-col  justify-center items-center br-sketch border-4 border-black py-10 px-28">
+          <div className=" w-full flex gap-6 items-center justify-end">
             <TimeZone />
 
             <EditButton
