@@ -26,7 +26,8 @@ export const EditForm = () => {
   return (
     <div className="fixed w-screen h-screen">
       <div id="form-backdrop" className=" bg-white/90 w-full h-full"></div>
-      <div className=" px-24 py-14  z-30 border-4 border-black br-sketch bg-white flex justify-center items-center absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
+      <div className=" px-24 py-14  z-30 border-4 border-black br-sketch bg-white flex flex-col gap-6 justify-center items-left absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
+       Change your timezone
         <form
           action=""
           onSubmit={formSubmitHandler}
@@ -36,7 +37,7 @@ export const EditForm = () => {
             className="br-sketch border-4  border-black px-6 py-4  bg-transparent"
             id="timezones"
             name="timezones"
-            value={timezone}
+            value={selected}
             onChange={getSelectedTimezone}
           >
             {supportedTimezones.map((timezone: string, index: number) => (
