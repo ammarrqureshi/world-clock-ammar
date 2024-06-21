@@ -1,32 +1,32 @@
 import dayjs from "dayjs";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useContext } from "react";
+import {
+  TimezoneContext,
+  TimezoneContextProps,
+} from "../contexts/TimezoneContext";
 
 export const TimeZone = () => {
-  dayjs.extend(utc);
-  dayjs.extend(timezone);
-  const [selectedRegion, setSelectedRegion] = useState<string>(
-    dayjs.tz.guess()
-  );
+  const { timezone, setTimezone } = useContext(
+    TimezoneContext
+  ) as TimezoneContextProps;
 
-  dayjs.tz.setDefault(selectedRegion);
+  dayjs.tz.setDefault(timezone);
 
   const supportedTimezones = Intl.supportedValuesOf("timeZone");
 
   const getSelectedTimezone = (event: ChangeEvent<HTMLSelectElement>) => {
     event.preventDefault();
-    setSelectedRegion(event.target.value);
+    setTimezone(event.target.value);
   };
 
   return (
     <div>
-      {selectedRegion}
+      {timezone}
       <div>
         <form action="">
           <select
-    className="br-sketch border-4  border-black px-6 py-4  bg-transparent"
-    onChange={getSelectedTimezone}
+            className="br-sketch border-4  border-black px-6 py-4  bg-transparent"
+            onChange={getSelectedTimezone}
             id="timezones"
             name="timezones"
           >
